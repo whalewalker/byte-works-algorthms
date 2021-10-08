@@ -1,0 +1,80 @@
+1. You are required to provide a sign up api for an application. What would be the path of this API. Give reasons for your choices
+
+Ans: Url path = "api/v1/auth/sign-up"
+
+ Reasons: 
+ 1. The "api/v1" path indicate the version of the software release which help developer that is working and those that will be working on the software later easily figure the current realse of that software.
+ 
+ 2. The "auth/sign-up" path indicate that the url path is for authentication which help the frontend developer understand without communicating to the backend developer.
+ 
+2. 
+
+ Ans: The HttpMethod would be a "POST" request
+  Reasons: 
+ 1. A user signing up simply means he/she want to send so data to the backend for that user to be authenticated, for the data to get to the backend a post request is required for the backend to have access to the user data.
+
+ 2. Post request is an http method that takes the user data from the client and other neccessary headers for the server to be able to work with that data. So for sign up case post http method is required.
+ 
+ 
+ 3. You are required to provide a Property search Api for an Application.
+  
+  Ans: Url path = "company-domain-name/version/search?{regsiterationdate}?{name}?{lga}"
+  
+  Reasons: 
+ 1. The Api need some information to be able fetch data from the server, so we used something called query parameter to get that data from the user search field and the parse it to the url header so that the server can user that data to search for the neccessary data.
+ 
+ 4. You are required to provide a Property search Api for an Application that would serve 3 million users. How would you design to ensure your Api is up to 99.9% of time?
+
+ Approach: 
+   Since i know i would be serving up to 3 million user the architecture am going to use to build that kind of application will be Micro-services.
+
+MICRO-SERVICE solve the problem of single point of fail, because there will be alot of traffic which might slow that the application server and resuce the amount of users.
+
+I would implement my search api in the sense that i can create multiple instance of that resource and my application gate way can route the request to the less traffic one at any point in which a rquest hit the server.
+  
+ 5. What is Authorization server and how does it work?
+ 
+ Ans: Authorization server is a server that does the authorization between two more services by configuring OAuth. 
+
+ Authorization server works inthe sense that it the intermidairy between the CLIENT and the RESOURCE SERVER, imagine a photo-printer website that takes photos and print them then deliver that photo do tour door step.
+
+That application need access to google drive but google drive that client does not have authorization to google drive so the application need to confugre what is called OAuth when enable service to take to each other on the behalf of the resource owner.
+So google drive has an authentication server and then the photo-printing app will send a request to authorization server by sending the user details. Then the authorization server need to verify the request by sending a verification notifiction to the owner of the google drive, when the user accept the the request, the  a token is generated with a minimum of authorities for that client and it send back to the client.
+Whenever the client want to request data from google drive, it need to send that token to the authorization server again and then the authorization server send back an access token for it to get data from google drive.
+
+
+6. What is Resouce Server and how does it works?
+
+ Ans: Resouce server is a server that hold the resouces own by the resource owner.
+ 
+ Resouce server is where resources of the resource owner is and another service can access that resource on the behalf of the resource owner by authorization server.
+
+7. Describe Oauth2.0 framework and explain 2 graint type you know.
+
+ Ans : OAuth 2.0 is the lastest version of OAuth. OAuth is a mechanism that does Authorization not Authentication between two or more services.
+ 
+ Two Grant type: 
+----------------
+1. 
+2.
+
+
+8. Describe a time when you had a crisis situation involving a project you were working on, how did you solve it?
+
+ Ans: I was working on a event management platform with a small team of 4. we discover we had issues with the features nedded for the software MVP.
+
+I believe is my responsibilities to figure a way to solve this problem, so i stay late in the evening with the CEO of the project to find solution for the problem we are having.
+
+I created a list of stories(features) neccessary for the the application MVP(Minimum Viable Product) and create a spring of 2 two week for which include the most prioritize features of the MVP. 
+I want on and allocate task for each software engineer on the team due to their competent levels.
+By the end of the day, we where able to create all the stories needed for the project and plan the two week spring which help use to organize our work in the sense that we where able to keep track of who impelement what and what is the available time to deliver that features.
+
+We were able to work as team and tap into the team expertise and i learn how to organize my task and how to priorize them.
+
+9. Describe Circuit-breaker pattern, explain how it help keep service up.
+
+Ans: Circuit-braker pattern is a design pattern that helps in keeping request that is comming from the client into a queue where by when the first request is done it pop out and the next follows.
+
+10. Diagonal Difference 
+
+
